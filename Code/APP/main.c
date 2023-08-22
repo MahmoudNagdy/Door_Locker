@@ -5,7 +5,7 @@ int main(){
 	DIO_voidInit();
 	LCD_init();
 	KPD_voidInit();
-	DC_Motor_Init(1, 0);
+	Stepper_Init();
 	
 	u8 keyPressed, c = 0, count = 0, r = 0, n = 0, tries = 2;
 	u8 InPassword[20];
@@ -38,9 +38,7 @@ int main(){
 				if(count == 4){
 					LCD_ClearScreen();
 					LCD_displayString("Welcome Home");
-					DC_Motor_Rotate(0, 0);
-					_delay_ms(12);
-					DC_Motor_Stop(0);
+					SelectStepAngle(180, 0);
 				}
 				if(r > 0){
 					LCD_ClearScreen();
@@ -75,6 +73,3 @@ int main(){
 	}
 	return 0;
 }
-	
-
-
