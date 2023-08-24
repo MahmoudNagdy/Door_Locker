@@ -1,6 +1,5 @@
 #include "APP_Includes.h"
 
-
 int main(){
 	DIO_voidInit();
 	LCD_init();
@@ -20,7 +19,7 @@ int main(){
 		KPD_u8GetKeyState(&keyPressed);
 		if (keyPressed != KPD_UnPressed) {
 			if ((keyPressed >= '0') && (keyPressed <= '9')) {
-				LCD_displayCharacter(keyPressed);
+				LCD_displayCharacter('*');
 				
 				InPassword[c++] = keyPressed;
 			}
@@ -73,3 +72,5 @@ int main(){
 	}
 	return 0;
 }
+
+
